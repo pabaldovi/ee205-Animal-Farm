@@ -9,6 +9,7 @@
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <cstdio>
 #include <cstring>
 #include "catDatabase.h"
 #include "config.h"
@@ -26,8 +27,5 @@ int validateIndex(int i) {
 }
 
 bool isCollarValid(const enum Color collar1, const enum Color collar2) {
-    if (strcmp(collar1, collar2) == 0) {
-        return 1;
-    }
-    return 0;
+    return collar1 != collar2;
 }
