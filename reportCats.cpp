@@ -57,7 +57,7 @@ int findCat(const char name[]){
     return 1;
 }
 
-char* genderName(const enum Gender gender) {
+const char* genderName(const enum Gender gender) {
     switch (gender) {
         case 0   :  return "Unknown gender";
         case 1   :  return "Male";
@@ -66,7 +66,7 @@ char* genderName(const enum Gender gender) {
     }
 }
 
-char* breedName(const enum Breed breed) {
+const char* breedName(const enum Breed breed) {
     switch (breed) {
         case 0   :  return "Unknown breed";
         case 1   :  return "Maine coon";
@@ -78,7 +78,7 @@ char* breedName(const enum Breed breed) {
     }
 }
 
-char* colorName (const enum Color color) {
+const char* colorName (const enum Color color) {
     switch (color) {
         case 0   :  return "Black";
         case 1   :  return "White";

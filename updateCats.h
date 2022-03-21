@@ -11,7 +11,7 @@
 
 #pragma once
 
-extern int updateCatName(int index, char newName[]);
+extern int updateCatName(int index, const char* newName);
 extern void fixCat(int index);
 extern void updateCatWeight(int index, float newWeight);
 extern void updateCatCollar1(int index, const enum Color color);
