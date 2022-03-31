@@ -38,13 +38,14 @@ enum Color {
 };
 
 extern int currentCat;
+typedef float Weight;
 
 struct Cat {
     char names[MAX_NAME_LENGTH];
     enum Gender genders;
     enum Breed breeds;
     bool isFixedArr;
-    float weights;
+    Weight weights;
     enum Color collarColor1;
     enum Color collarColor2;
     unsigned long long license;

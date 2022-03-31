@@ -37,7 +37,7 @@ void fixCat(int index) {
     }
 }
 
-void updateCatWeight(int index, float newWeight) {
+void updateCatWeight(int index, Weight newWeight) {
     if (validateIndex(index) == 0) {
         if (newWeight > 0) {
             cats[index].weights = newWeight;

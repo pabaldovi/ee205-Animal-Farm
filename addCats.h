@@ -16,7 +16,7 @@ extern int addCat(   const char name[],
                      const enum Gender gender,
                      const enum Breed breed,
                      const bool isFixed,
-                     const float weight,
+                     const Weight weight,
                      const enum Color collar1,
                      const enum Color collar2,
                      const unsigned long long licenseNum);
