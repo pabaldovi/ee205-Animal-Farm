@@ -37,8 +37,10 @@ enum Color {
     PINK
 };
 
-extern int currentCat;
 typedef float Weight;
+typedef int NumCats;
+
+extern NumCats currentCat;
 
 struct Cat {
     char names[MAX_NAME_LENGTH];
