@@ -17,11 +17,19 @@
 using namespace std;
 
 Cat::Cat() {
-
+    memset(name, 0, MAX_NAME_LENGTH);
+    gender = UNKNOWN_GENDER;
+    breed = UNKNOWN_BREED;
+    isFixed = false;
+    weight = UNKNOWN_WEIGHT;
+    next = nullptr;
 }
 
 Cat::Cat(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) {
-
+    setName(newName);
+    setGender(newGender);
+    setBreed(newBreed);
+    setWeight(newWeight);
 }
 
 char *Cat::getName() {
@@ -78,6 +86,3 @@ void Cat::setWeight(Weight newWeight) {
 
     Cat::weight = newWeight;
 }
-
-
-

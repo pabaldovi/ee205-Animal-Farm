@@ -14,6 +14,7 @@
 
 #define MAX_NAME_LENGTH (50)
 #define MAX_CATS        (1024)
+#define UNKNOWN_WEIGHT  (-1)
 
 enum Gender {
     UNKNOWN_GENDER,
