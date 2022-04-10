@@ -52,12 +52,7 @@ char *Cat::getName(){
 }
 
 void Cat::setName(const char *newName) {
-    if (strlen(newName) == 0)
-        throw invalid_argument("Cat name length must be > 0.");
-
-    if (strlen(newName) > MAX_NAME_LENGTH)
-        throw invalid_argument("Cat name length must be <= " + to_string(MAX_NAME_LENGTH));
-
+    assert(isNameValid(newName));
     strcpy(name , newName);
 }
 
@@ -100,6 +95,16 @@ void Cat::setWeight(Weight newWeight) {
         throw invalid_argument("Weight must be > 0");
 
     Cat::weight = newWeight;
+}
+
+bool Cat::isNameValid(const char *newName) {
+    if (strlen(newName) == 0)
+        throw invalid_argument("Cat name length must be > 0.");
+
+    if (strlen(newName) > MAX_NAME_LENGTH)
+        throw invalid_argument("Cat name length must be <= " + to_string(MAX_NAME_LENGTH));
+
+    return true;
 }
 
 bool Cat::validate() {
