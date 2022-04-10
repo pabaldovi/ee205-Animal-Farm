@@ -69,11 +69,14 @@ void Cat::fixCat() {
 }
 
 Weight Cat::getWeight() {
-    return 0;
+    return weight;
 }
 
 void Cat::setWeight(Weight newWeight) {
+    if (newWeight <= 0)
+        throw invalid_argument("Weight must be > 0");
 
+    Cat::weight = newWeight;
 }
 
 
