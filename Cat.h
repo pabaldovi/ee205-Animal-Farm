@@ -54,6 +54,7 @@ class Cat {
         bool isNameValid(const char *newName);
         bool isGenderValid(const Gender newGender);
         bool isBreedValid(const Breed newBreed);
+        bool isWeightValid(const Weight newWeight);
 
         bool validate();
         bool print();

@@ -87,9 +87,7 @@ Weight Cat::getWeight() {
 }
 
 void Cat::setWeight(Weight newWeight) {
-    if (newWeight <= 0)
-        throw invalid_argument("Weight must be > 0");
-
+    assert(isWeightValid(newWeight));
     Cat::weight = newWeight;
 }
 
@@ -113,6 +111,13 @@ bool Cat::isGenderValid(const Gender newGender) {
 bool Cat::isBreedValid(const Breed newBreed) {
     if (breed != UNKNOWN_BREED && newBreed != UNKNOWN_BREED)
         throw logic_error("Previous breed must be UNKNOWN_BREED");
+
+    return true;
+}
+
+bool Cat::isWeightValid(const Weight newWeight) {
+    if (newWeight <= 0)
+        throw invalid_argument("Weight must be > 0");
 
     return true;
 }
