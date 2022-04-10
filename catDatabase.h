@@ -59,3 +59,5 @@ extern struct Cat cats[MAX_CATS];
 extern int validateIndex(int i);
 
 bool isCollarValid(const enum Color collar1, const enum Color collar2);
+
+bool isDatabaseValid();
