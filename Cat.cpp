@@ -9,3 +9,13 @@
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "Cat.h"
+
+Cat::Cat() {
+
+}
+
+Cat::Cat(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) {
+
+}
+
+

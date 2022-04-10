@@ -42,7 +42,7 @@ typedef int NumCats;
 
 extern NumCats currentCat;
 
-struct Cat {
+/*struct Cat {
     char names[MAX_NAME_LENGTH];
     enum Gender genders;
     enum Breed breeds;
@@ -51,7 +51,7 @@ struct Cat {
     enum Color collarColor1;
     enum Color collarColor2;
     unsigned long long license;
-};
+};*/
 
 extern struct Cat cats[MAX_CATS];
 

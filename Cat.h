@@ -23,6 +23,14 @@ class Cat {
         Weight weight;
     public:
         Cat *next;
+
+        // Cat constructor with no parameters
+        Cat();
+        // Cat constructor with all fields for valid cat
+        Cat(const char*     newName,
+            const Gender    newGender,
+            const Breed     newBreed,
+            const Weight    newWeight);
 };
 
 
