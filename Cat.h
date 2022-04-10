@@ -12,8 +12,17 @@
 #define EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
 
 
-class Cat {
+#include "catDatabase.h"
 
+class Cat {
+    protected:
+        char name[MAX_NAME_LENGTH];
+        enum Gender gender;
+        enum Breed breed;
+        bool isCatFixed;
+        Weight weight;
+    public:
+        Cat *next;
 };
 
 
