@@ -53,6 +53,7 @@ class Cat {
 
         bool isNameValid(const char *newName);
         bool isGenderValid(const Gender newGender);
+        bool isBreedValid(const Breed newBreed);
 
         bool validate();
         bool print();
