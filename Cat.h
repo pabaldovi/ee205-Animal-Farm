@@ -50,5 +50,8 @@ class Cat {
 
         Weight getWeight();
         void setWeight(Weight newWeight);
+
+        bool print();
+        bool validate();
 };
 #endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H

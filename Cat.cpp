@@ -11,10 +11,16 @@
 
 #include <iostream>
 #include <cstring>
+#include <cassert>
+#include <iomanip>
 #include "Cat.h"
 #include "config.h"
+#include "reportCats.h"
 
 using namespace std;
+
+/// Format a line for printing the members of a class
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 Cat::Cat() {
     memset(name, 0, MAX_NAME_LENGTH);
@@ -41,7 +47,7 @@ Cat::~Cat() {
     next = nullptr;
 }
 
-char *Cat::getName() {
+char *Cat::getName(){
     return name;
 }
 
@@ -94,4 +100,24 @@ void Cat::setWeight(Weight newWeight) {
         throw invalid_argument("Weight must be > 0");
 
     Cat::weight = newWeight;
+}
+
+bool Cat::validate() {
+    return true;
+}
+
+/// @returns true if everything worked correctly.  false if something goes
+///          wrong
+bool Cat::print() {
+    assert( validate() ) ;
+    cout << setw(80) << setfill( '=' ) << "" << endl ;
+    cout << setfill( ' ' ) ;
+    cout << left ;
+    cout << boolalpha ;
+    FORMAT_LINE( "Cat", "name" ) << getName() << endl;
+    FORMAT_LINE( "Cat", "gender" ) << genderName(getGender()) << endl;
+    FORMAT_LINE( "Cat", "breed" ) << breedName(getBreed()) << endl;
+    FORMAT_LINE( "Cat", "isFixed" ) << isCatFixed() << endl;
+    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl;
+    return true ;
 }
