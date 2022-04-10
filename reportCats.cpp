@@ -14,7 +14,7 @@
 #include "catDatabase.h"
 #include "reportCats.h"
 
-void printCat(int i) {
+/*void printCat(int i) {
     if (i < 0 || i > MAX_CATS) {
         printf("animalFarm0; Bad cat [%d]\n", i);
     } else {
@@ -55,7 +55,7 @@ int findCat(const char name[]){
         }
     }
     return 1;
-}
+}*/
 
 const char* genderName(const enum Gender gender) {
     switch (gender) {

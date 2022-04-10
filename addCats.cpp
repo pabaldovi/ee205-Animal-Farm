@@ -15,7 +15,7 @@
 #include "addCats.h"
 #include "config.h"
 
-int addCat( const char name[],
+/*int addCat( const char name[],
             const enum Gender gender,
             const enum Breed breed,
             const bool isFixed,
@@ -62,4 +62,4 @@ int addCat( const char name[],
     cats[currentCat].license = licenseNum;
     currentCat++;
     return currentCat;
-}
+}*/

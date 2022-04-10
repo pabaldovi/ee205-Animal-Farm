@@ -16,7 +16,7 @@
 #include "updateCats.h"
 #include "config.h"
 
-int updateCatName(int index, const char* newName) {
+/*int updateCatName(int index, const char* newName) {
     if (validateIndex(index) == 0 && strlen(newName) > 0) {
         for (int i = 0; i < MAX_CATS; i++) {
             if (strcmp(cats[i].names, newName) ==  0) {
@@ -61,4 +61,4 @@ void updateLicense(int index, unsigned long long licenseNum) {
     if (validateIndex(index) == 0) {
         cats[index].license = licenseNum;
     }
-}
+}*/

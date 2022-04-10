@@ -13,7 +13,7 @@
 #include "catDatabase.h"
 #include "deleteCats.h"
 
-void deleteAllCats() {
+/*void deleteAllCats() {
     memset(cats, 0, sizeof(cats));
     currentCat = 0;
 }
@@ -29,4 +29,4 @@ void deleteCat(int index) {
 
         }
     }
-}
+}*/

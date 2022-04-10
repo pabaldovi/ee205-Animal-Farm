@@ -20,7 +20,7 @@
 int main() {
    printf("Starting %s\n", PROGRAM_NAME);
 
-   addCat( "Loki",   MALE,             PERSIAN,    true,    8.5,  BLACK, WHITE, 101 ) ;
+   /*addCat( "Loki",   MALE,             PERSIAN,    true,    8.5,  BLACK, WHITE, 101 ) ;
    addCat( "Milo",   MALE,             MANX,       true,    7.0,  BLACK, RED,   102 ) ;
    addCat( "Bella",  FEMALE,           MAINE_COON, true,    18.2, BLACK, BLUE,  103 ) ;
    addCat( "Kali",   FEMALE,           SHORTHAIR,  false,   9.2,  BLACK, GREEN, 104 ) ;
@@ -43,7 +43,7 @@ int main() {
    deleteCat(0);
    printAllCats();
    //addCat( "Loki", MALE, PERSIAN, true, 8.5 ) ;
-   //addCat( "Loki", MALE, PERSIAN, true, 8.5 ) ;
+   //addCat( "Loki", MALE, PERSIAN, true, 8.5 ) ;*/
 
    printf("Done with %s\n", PROGRAM_NAME);
    return 0;

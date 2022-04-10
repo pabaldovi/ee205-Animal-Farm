@@ -14,6 +14,7 @@
 #include "catDatabase.h"
 #include "config.h"
 
+/*
 NumCats currentCat = 0;
 
 struct Cat cats[MAX_CATS];
@@ -28,4 +29,4 @@ int validateIndex(int i) {
 
 bool isCollarValid(const enum Color collar1, const enum Color collar2) {
     return collar1 != collar2;
-}
+}*/
