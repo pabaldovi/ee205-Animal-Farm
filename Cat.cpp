@@ -50,11 +50,14 @@ void Cat::setGender(Gender newGender) {
 }
 
 Breed Cat::getBreed() {
-    return PERSIAN;
+    return breed;
 }
 
 void Cat::setBreed(Breed newBreed) {
+    if (breed != UNKNOWN_BREED && newBreed != UNKNOWN_BREED)
+        throw logic_error("Previous breed must be UNKNOWN_BREED");
 
+    Cat::breed = newBreed;
 }
 
 bool Cat::isCatFixed() {
