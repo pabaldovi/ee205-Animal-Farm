@@ -123,6 +123,15 @@ bool Cat::isWeightValid(const Weight newWeight) {
 }
 
 bool Cat::validate() {
+    try {
+        isNameValid(name);
+        isGenderValid(gender);
+        isBreedValid(breed);
+        isWeightValid(weight);
+    } catch (exception const& e) {
+        cout << e.what() << endl;
+        return false;
+    }
     return true;
 }
 
