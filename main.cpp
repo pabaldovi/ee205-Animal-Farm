@@ -9,7 +9,7 @@
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <stdio.h>
+#include <iostream>
 #include "catDatabase.h"
 #include "addCats.h"
 #include "deleteCats.h"
