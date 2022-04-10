@@ -52,6 +52,7 @@ class Cat {
         void setWeight(Weight newWeight);
 
         bool isNameValid(const char *newName);
+        bool isGenderValid(const Gender newGender);
 
         bool validate();
         bool print();

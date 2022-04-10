@@ -61,9 +61,7 @@ Gender Cat::getGender() {
 }
 
 void Cat::setGender(Gender newGender) {
-    if (gender != UNKNOWN_GENDER && newGender != UNKNOWN_GENDER)
-        throw logic_error("Previous gender must be UNKNOWN_GENDER");
-
+    assert(isGenderValid(newGender));
     Cat::gender = newGender;
 }
 
@@ -103,6 +101,13 @@ bool Cat::isNameValid(const char *newName) {
 
     if (strlen(newName) > MAX_NAME_LENGTH)
         throw invalid_argument("Cat name length must be <= " + to_string(MAX_NAME_LENGTH));
+
+    return true;
+}
+
+bool Cat::isGenderValid(const Gender newGender) {
+    if (gender != UNKNOWN_GENDER && newGender != UNKNOWN_GENDER)
+        throw logic_error("Previous gender must be UNKNOWN_GENDER");
 
     return true;
 }
