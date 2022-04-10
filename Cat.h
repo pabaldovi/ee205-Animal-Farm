@@ -19,8 +19,11 @@ class Cat {
         char name[MAX_NAME_LENGTH];
         enum Gender gender;
         enum Breed breed;
-        bool isCatFixed;
+        bool isFixedArr;
         Weight weight;
+
+        void setGender(Gender newGender);
+        void setBreed(Breed newBreed);
     public:
         Cat *next;
 
@@ -31,7 +34,18 @@ class Cat {
             const Gender    newGender,
             const Breed     newBreed,
             const Weight    newWeight);
+
+        char *getName();
+        void setName(const char *newName);
+
+        Gender getGender();
+
+        Breed getBreed();
+
+        bool isCatFixed();
+        void fixCat();
+
+        Weight getWeight();
+        void setWeight(Weight newWeight);
 };
-
-
 #endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
