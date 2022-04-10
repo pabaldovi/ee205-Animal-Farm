@@ -39,11 +39,14 @@ void Cat::setName(const char *newName) {
 }
 
 Gender Cat::getGender() {
-    return UNKNOWN_GENDER;
+    return gender;
 }
 
 void Cat::setGender(Gender newGender) {
+    if (gender != UNKNOWN_GENDER && newGender != UNKNOWN_GENDER)
+        throw logic_error("Previous gender must be UNKNOWN_GENDER");
 
+    Cat::gender = newGender;
 }
 
 Breed Cat::getBreed() {
