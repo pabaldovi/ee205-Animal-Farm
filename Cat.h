@@ -35,6 +35,9 @@ class Cat {
             const Breed     newBreed,
             const Weight    newWeight);
 
+        //Cat destructor
+        virtual ~Cat();
+
         char *getName();
         void setName(const char *newName);
 

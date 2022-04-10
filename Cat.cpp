@@ -32,6 +32,15 @@ Cat::Cat(const char *newName, const Gender newGender, const Breed newBreed, cons
     setWeight(newWeight);
 }
 
+Cat::~Cat() {
+    memset(name, 0, MAX_NAME_LENGTH);
+    gender = UNKNOWN_GENDER;
+    breed = UNKNOWN_BREED;
+    isFixed = false;
+    weight = UNKNOWN_WEIGHT;
+    next = nullptr;
+}
+
 char *Cat::getName() {
     return name;
 }
