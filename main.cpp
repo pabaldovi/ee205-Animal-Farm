@@ -17,8 +17,10 @@
 #include "updateCats.h"
 #include "config.h"
 
+using namespace std;
+
 int main() {
-   printf("Starting %s\n", PROGRAM_NAME);
+   cout << "Starting " << PROGRAM_NAME << endl;
 
    /*addCat( "Loki",   MALE,             PERSIAN,    true,    8.5,  BLACK, WHITE, 101 ) ;
    addCat( "Milo",   MALE,             MANX,       true,    7.0,  BLACK, RED,   102 ) ;
@@ -45,6 +47,6 @@ int main() {
    //addCat( "Loki", MALE, PERSIAN, true, 8.5 ) ;
    //addCat( "Loki", MALE, PERSIAN, true, 8.5 ) ;*/
 
-   printf("Done with %s\n", PROGRAM_NAME);
+   cout << "Done with " << PROGRAM_NAME << endl;
    return 0;
 }
