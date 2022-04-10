@@ -61,11 +61,11 @@ void Cat::setBreed(Breed newBreed) {
 }
 
 bool Cat::isCatFixed() {
-    return false;
+    return isFixed;
 }
 
 void Cat::fixCat() {
-
+    Cat::isFixed = true;
 }
 
 Weight Cat::getWeight() {

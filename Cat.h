@@ -19,7 +19,7 @@ class Cat {
         char name[MAX_NAME_LENGTH];
         enum Gender gender;
         enum Breed breed;
-        bool isFixedArr;
+        bool isFixed;
         Weight weight;
 
         void setGender(Gender newGender);
