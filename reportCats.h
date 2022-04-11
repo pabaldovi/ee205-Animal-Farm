@@ -13,7 +13,7 @@
 #include "Cat.h"
 
 //void printCat(int index);
-//void printAllCats();
+void printAllCats();
 //int findCat(const char name[]);
 extern const char* genderName(const enum Cat::Gender gender);
 extern const char* breedName(const enum Cat::Breed breed);

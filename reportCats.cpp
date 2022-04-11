@@ -11,6 +11,7 @@
 
 #include <cstdio>
 #include <cstring>
+#include <cassert>
 #include "catDatabase.h"
 #include "reportCats.h"
 #include "Cat.h"
@@ -90,6 +91,15 @@ const char* breedName(const enum Cat::Breed breed) {
 //        default  :  return "NULL";
 //    }
 //}
+
+void printAllCats() {
+    assert(isDatabaseValid());
+    Cat* temp = catDatabaseHeadPointer;
+    while (temp != nullptr) {
+        temp -> Cat::print();
+        temp = temp -> next;
+    }
+}
 
 Cat* findCatByName(const char *name) {
     Cat* temp = catDatabaseHeadPointer;
