@@ -9,10 +9,11 @@
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "catDatabase.h"
 #include "reportCats.h"
+#include "Cat.h"
 
 /*void printCat(int i) {
     if (i < 0 || i > MAX_CATS) {
@@ -57,7 +58,7 @@ int findCat(const char name[]){
     return 1;
 }*/
 
-const char* genderName(const enum Gender gender) {
+const char* genderName(const enum Cat::Gender gender) {
     switch (gender) {
         case 0   :  return "Unknown gender";
         case 1   :  return "Male";
@@ -66,7 +67,7 @@ const char* genderName(const enum Gender gender) {
     }
 }
 
-const char* breedName(const enum Breed breed) {
+const char* breedName(const enum Cat::Breed breed) {
     switch (breed) {
         case 0   :  return "Unknown breed";
         case 1   :  return "Maine coon";
@@ -78,14 +79,14 @@ const char* breedName(const enum Breed breed) {
     }
 }
 
-const char* colorName (const enum Color color) {
-    switch (color) {
-        case 0   :  return "Black";
-        case 1   :  return "White";
-        case 2   :  return "Red";
-        case 3   :  return "Blue";
-        case 4   :  return "Green";
-        case 5   :  return "Pink";
-        default  :  return "NULL";
-    }
-}
+//const char* colorName (const enum Color color) {
+//    switch (color) {
+//        case 0   :  return "Black";
+//        case 1   :  return "White";
+//        case 2   :  return "Red";
+//        case 3   :  return "Blue";
+//        case 4   :  return "Green";
+//        case 5   :  return "Pink";
+//        default  :  return "NULL";
+//    }
+//}
