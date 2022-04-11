@@ -10,7 +10,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include <stdbool.h>
+#include "Cat.h"
+
+bool addCat(Cat* newCat);
+
+/*#include <stdbool.h>
 
 extern int addCat(   const char name[],
                      const enum Gender gender,
@@ -19,4 +23,4 @@ extern int addCat(   const char name[],
                      const Weight weight,
                      const enum Color collar1,
                      const enum Color collar2,
-                     const unsigned long long licenseNum);
+                     const unsigned long long licenseNum);*/

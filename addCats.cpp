@@ -8,11 +8,26 @@
 /// @author Paulo Baldovi <pbaldovi@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+
+#include <cassert>
+#include "addCats.h"
+#include "catDatabase.h"
+
+bool addCat(Cat* newCat) {
+    assert(isDatabaseValid());
+    newCat -> Cat::validate();
+    newCat -> next = catDatabaseHeadPointer;
+    catDatabaseHeadPointer = newCat;
+    currentCat++;
+    assert(isDatabaseValid());
+    return true;
+}
+
 /*
 #include <stdio.h>
 #include <string.h>
 #include "catDatabase.h"
-#include "addCats.h"
+
 #include "config.h"
 
 int addCat( const char name[],
