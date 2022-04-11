@@ -9,6 +9,7 @@
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <cstring>
 #include <cassert>
 #include "linkedList.h"
 #include "catDatabase.h"

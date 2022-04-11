@@ -142,6 +142,27 @@ bool Cat::validate() {
     return true;
 }
 
+const char* genderName(const enum Cat::Gender gender) {
+    switch (gender) {
+        case 0   :  return "Unknown gender";
+        case 1   :  return "Male";
+        case 2   :  return "Female";
+        default  :  return "NULL";
+    }
+}
+
+const char* breedName(const enum Cat::Breed breed) {
+    switch (breed) {
+        case 0   :  return "Unknown breed";
+        case 1   :  return "Maine coon";
+        case 2   :  return "Manx";
+        case 3   :  return "Shorthair";
+        case 4   :  return "Persian";
+        case 5   :  return "Sphynx";
+        default  :  return "NULL";
+    }
+}
+
 /// @returns true if everything worked correctly.  false if something goes
 ///          wrong
 bool Cat::print() {

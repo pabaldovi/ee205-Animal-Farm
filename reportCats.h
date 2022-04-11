@@ -15,7 +15,6 @@
 //void printCat(int index);
 
 //int findCat(const char name[]);
-extern const char* genderName(const enum Cat::Gender gender);
-extern const char* breedName(const enum Cat::Breed breed);
+
 //extern const char* colorName (const enum Cat::Color color);
 
