@@ -59,8 +59,10 @@ class Cat {
         void setName(const char *newName);
 
         Gender getGender();
+        void setGender(Gender newGender);
 
         Breed getBreed();
+        void setBreed(Breed newBreed);
 
         bool isCatFixed();
         void fixCat();
@@ -81,8 +83,5 @@ class Cat {
         enum Breed breed;
         bool isFixed;
         Weight weight;
-
-        void setGender(Gender newGender);
-        void setBreed(Breed newBreed);
 };
 //#endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
