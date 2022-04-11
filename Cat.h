@@ -8,23 +8,40 @@
 /// @author Paulo Baldovi <pbaldovi@hawaii.edu>
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-#ifndef EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
-#define EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
+//#ifndef EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
+//#define EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
 
+#pragma once
+#define MAX_NAME_LENGTH (50)
+#define UNKNOWN_WEIGHT  (-1)
 
-#include "catDatabase.h"
+typedef float Weight;
+typedef int NumCats;
 
 class Cat {
-    protected:
-        char name[MAX_NAME_LENGTH];
-        enum Gender gender;
-        enum Breed breed;
-        bool isFixed;
-        Weight weight;
-
-        void setGender(Gender newGender);
-        void setBreed(Breed newBreed);
     public:
+        enum Gender {
+            UNKNOWN_GENDER,
+            MALE,
+            FEMALE
+        };
+        enum Breed {
+            UNKNOWN_BREED,
+            MAINE_COON,
+            MANX,
+            SHORTHAIR,
+            PERSIAN,
+            SPHYNX
+        };
+        enum Color {
+            BLACK,
+            WHITE,
+            RED,
+            BLUE,
+            GREEN,
+            PINK
+        };
+
         Cat *next;
 
         // Cat constructor with no parameters
@@ -58,5 +75,14 @@ class Cat {
 
         bool validate();
         bool print();
+    protected:
+        char name[MAX_NAME_LENGTH];
+        enum Gender gender;
+        enum Breed breed;
+        bool isFixed;
+        Weight weight;
+
+        void setGender(Gender newGender);
+        void setBreed(Breed newBreed);
 };
-#endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
+//#endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_CAT_H
