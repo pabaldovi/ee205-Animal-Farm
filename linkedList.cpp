@@ -22,3 +22,42 @@ bool addCat(Cat* newCat) {
     assert(isDatabaseValid());
     return true;
 }
+
+bool deleteCat(Cat* targetPointer) {
+    assert(isDatabaseValid());
+    Cat* temp = catDatabaseHeadPointer;
+    Cat* prev = nullptr;
+
+    //check if head node holds targetPointer
+    if (temp != nullptr && temp == targetPointer) {
+        catDatabaseHeadPointer = temp -> next;
+        delete temp;
+        currentCat--;
+        assert(isDatabaseValid());
+        return true;
+    }
+
+    while (temp != nullptr && temp != targetPointer) {
+        prev = temp;
+        temp = temp -> next;
+    }
+
+    //after iterating through list, targetPointer was not found
+    if (temp == nullptr)
+        return false;
+
+    //unlink node from list
+    prev -> next = temp -> next;
+    delete temp;
+    currentCat--;
+    assert(isDatabaseValid());
+    return true;
+}
+
+void deleteAllCats() {
+    assert(isDatabaseValid());
+    while (catDatabaseHeadPointer != nullptr) {
+        deleteCat(catDatabaseHeadPointer);
+    }
+    currentCat = 0;
+}

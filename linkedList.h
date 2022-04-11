@@ -14,3 +14,5 @@
 #include "Cat.h"
 
 bool addCat(Cat* newCat);
+bool deleteCat(Cat* targetPointer);
+void deleteAllCats();
