@@ -16,19 +16,23 @@
 #include "reportCats.h"
 #include "updateCats.h"
 #include "config.h"
+//#include "Cat.h"
 
 using namespace std;
 
 int main() {
    cout << "Starting " << PROGRAM_NAME << endl;
 
-   /*addCat( "Loki",   MALE,             PERSIAN,    true,    8.5,  BLACK, WHITE, 101 ) ;
-   addCat( "Milo",   MALE,             MANX,       true,    7.0,  BLACK, RED,   102 ) ;
-   addCat( "Bella",  FEMALE,           MAINE_COON, true,    18.2, BLACK, BLUE,  103 ) ;
-   addCat( "Kali",   FEMALE,           SHORTHAIR,  false,   9.2,  BLACK, GREEN, 104 ) ;
-   addCat( "Trin",   FEMALE,           MANX,       true,    12.2, BLACK, PINK,  105 ) ;
-   addCat( "Chili",  UNKNOWN_GENDER,   SHORTHAIR,  false,   19.0, WHITE, BLACK, 106 ) ;
+   addCat( new Cat("Loki",   Cat::MALE,     Cat::PERSIAN,    1.0 )) ;
+   addCat( new Cat("Milo",   Cat::MALE,     Cat::MANX,       1.1 )) ;
+   addCat( new Cat("Bella",  Cat::FEMALE,   Cat::MAINE_COON, 1.2 )) ;
+   addCat( new Cat("Kali",   Cat::FEMALE,   Cat::SHORTHAIR,  1.3 )) ;
+   addCat( new Cat("Trin",   Cat::FEMALE,   Cat::MANX,       1.4 )) ;
+   addCat( new Cat("Chili",  Cat::MALE,     Cat::SHORTHAIR,  1.5)) ;
    printAllCats();
+   deleteAllCats();
+   printAllCats();
+   /*
    int kali = findCat( "Kali" ) ;
    updateCatName( kali, "Chili" ) ; // this should fail
    printCat( kali );
