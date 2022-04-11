@@ -11,37 +11,14 @@
 
 #pragma once
 #include <stdbool.h>
+#include "Cat.h"
 
-#define MAX_NAME_LENGTH (50)
 #define MAX_CATS        (1024)
-#define UNKNOWN_WEIGHT  (-1)
-
-enum Gender {
-    UNKNOWN_GENDER,
-    MALE,
-    FEMALE
-};
-enum Breed {
-    UNKNOWN_BREED,
-    MAINE_COON,
-    MANX,
-    SHORTHAIR,
-    PERSIAN,
-    SPHYNX
-};
-enum Color {
-    BLACK,
-    WHITE,
-    RED,
-    BLUE,
-    GREEN,
-    PINK
-};
-
-typedef float Weight;
-typedef int NumCats;
 
 extern NumCats currentCat;
+extern Cat* catDatabaseHeadPointer;
+
+bool isDatabaseValid();
 
 /*struct Cat {
     char names[MAX_NAME_LENGTH];
@@ -54,10 +31,9 @@ extern NumCats currentCat;
     unsigned long long license;
 };*/
 
-extern struct Cat cats[MAX_CATS];
+//extern struct Cat cats[MAX_CATS];
 
-extern int validateIndex(int i);
+//extern int validateIndex(int i);
 
-bool isCollarValid(const enum Color collar1, const enum Color collar2);
+//bool isCollarValid(const enum Color collar1, const enum Color collar2);
 
-bool isDatabaseValid();
