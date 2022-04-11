@@ -8,14 +8,14 @@
 /// @author Paulo Baldovi <pbaldovi@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+/*
 #include <stdio.h>
 #include <string.h>
 #include "catDatabase.h"
 #include "addCats.h"
 #include "config.h"
 
-/*int addCat( const char name[],
+int addCat( const char name[],
             const enum Gender gender,
             const enum Breed breed,
             const bool isFixed,

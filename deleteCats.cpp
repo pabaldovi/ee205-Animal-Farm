@@ -8,12 +8,12 @@
 /// @author Paulo Baldovi <pbaldovi@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+/*
 #include <string.h>
 #include "catDatabase.h"
 #include "deleteCats.h"
 
-/*void deleteAllCats() {
+void deleteAllCats() {
     memset(cats, 0, sizeof(cats));
     currentCat = 0;
 }
