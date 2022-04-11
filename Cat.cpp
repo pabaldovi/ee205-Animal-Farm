@@ -102,14 +102,14 @@ bool Cat::isNameValid(const char *newName) {
 }
 
 bool Cat::isGenderValid(const Gender newGender) {
-    if (gender != UNKNOWN_GENDER && newGender != UNKNOWN_GENDER)
+    if (gender != UNKNOWN_GENDER && newGender == UNKNOWN_GENDER)
         throw logic_error("Previous gender must be UNKNOWN_GENDER");
 
     return true;
 }
 
 bool Cat::isBreedValid(const Breed newBreed) {
-    if (breed != UNKNOWN_BREED && newBreed != UNKNOWN_BREED)
+    if (breed != UNKNOWN_BREED && newBreed == UNKNOWN_BREED)
         throw logic_error("Previous breed must be UNKNOWN_BREED");
 
     return true;
