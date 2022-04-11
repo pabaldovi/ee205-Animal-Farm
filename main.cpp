@@ -19,7 +19,6 @@
 #include "Cat.h"
 #include "catDatabase.h"
 #include "linkedList.h"
-#include "reportCats.h"
 
 using namespace std ;
 
@@ -29,7 +28,7 @@ using namespace std ;
 /// @internal Used to test an illegal name (because it's too large by
 ///           one character)
 #define ILLEGAL_NAME "12345678901234567890123456789012345678901234567890"
-//#define DEBUG
+#define DEBUG
 
 /// The entry point for Animal Farm
 int main() {

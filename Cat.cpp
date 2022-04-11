@@ -14,8 +14,6 @@
 #include <cassert>
 #include <iomanip>
 #include "Cat.h"
-#include "config.h"
-#include "reportCats.h"
 
 using namespace std;
 
