@@ -30,7 +30,7 @@ using namespace std ;
 /// @internal Used to test an illegal name (because it's too large by
 ///           one character)
 #define ILLEGAL_NAME "12345678901234567890123456789012345678901234567890"
-
+//#define DEBUG
 
 /// The entry point for Animal Farm
 int main() {
@@ -38,17 +38,17 @@ int main() {
 
 //    initializeDatabase() ;
 
-#ifdef DEBUG
+    #ifdef DEBUG
     {
       // Verify that a cat's default values are set
       Cat testCat = Cat();
       assert(testCat.getName() != nullptr );
       assert(strcmp(testCat.getName(), "") == 0);
-      assert(testCat.getGender() == UNKNOWN_GENDER);
-      assert(testCat.getBreed() == UNKNOWN_BREED);
-      assert(testCat.isFixed() == false);
+      assert(testCat.getGender() == Cat::UNKNOWN_GENDER);
+      assert(testCat.getBreed() == Cat::UNKNOWN_BREED);
+      assert(testCat.isCatFixed() == false);
       assert(testCat.getWeight() == UNKNOWN_WEIGHT);
-      assert(!testCat.isFixed());
+      assert(!testCat.isCatFixed());
       assert(!testCat.validate());  // The default cat is invalid
 
       // Test for NULL name
@@ -73,22 +73,22 @@ int main() {
          assert(false); // We should never get here
       } catch (exception const &e) {}
 
-      testCat.setGender(FEMALE);
+      testCat.setGender(Cat::FEMALE);
 
       try {
-         testCat.setGender(MALE);
+         testCat.setGender(Cat::MALE);
          assert(false); // We should never get here
       } catch (exception const &e) {}
 
-      testCat.setBreed(MAINE_COON);
+      testCat.setBreed(Cat::MAINE_COON);
 
       try {
-         testCat.setBreed(MANX);
+         testCat.setBreed(Cat::MANX);
          assert(false); // We should never get here
       } catch (exception const &e) {}
 
       testCat.fixCat();
-      assert(testCat.isFixed());
+      assert(testCat.isCatFixed());
 
       // Test for Weight <= 0
       try {
@@ -99,12 +99,18 @@ int main() {
       testCat.setWeight(1.0 / 1024);
       assert(testCat.getWeight() == 1.0 / 1024);
 
+//      cout << testCat.getName() << endl;
+//      cout << genderName(testCat.getGender()) << endl;
+//      cout << breedName(testCat.getBreed()) << endl;
+//      cout << testCat.isCatFixed() << endl;
+//      cout << testCat.getWeight() << endl;
+
       assert(testCat.validate());  // The cat should now be valid
       testCat.print() ;
 
-      assert(!isCatInDatabase(&testCat)) ;
+//      assert(!isCatInDatabase(&testCat)) ;
    }
-#endif
+    #endif
 
     bool result ;
     result = addCat( new Cat( "Loki", Cat::MALE, Cat::PERSIAN, 1.0 )) ;
@@ -121,7 +127,7 @@ int main() {
     result = addCat( new Cat( "Chili", Cat::MALE, Cat::SHORTHAIR, 1.5 )) ;
     assert( result ) ;
 
-#ifdef DEBUG
+    #ifdef DEBUG
     {
       // Test finding a cat...
       Cat *bella = findCatByName("Bella");
@@ -137,15 +143,11 @@ int main() {
 
       bella = nullptr;
    }
-#endif
+    #endif
 
     printAllCats() ;
-
     deleteAllCats() ;
-
     printAllCats() ;
-
     cout << "Done with " << PROGRAM_NAME ;
-
     return( EXIT_SUCCESS ) ;
 }
