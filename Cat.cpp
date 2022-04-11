@@ -93,7 +93,7 @@ void Cat::setWeight(Weight newWeight) {
 
 bool Cat::isNameValid(const char *newName) {
     if (newName == nullptr)
-        throw invalid_argument("Cat name must not be null")
+        throw invalid_argument("Cat name must not be null");
 
     if (strlen(newName) == 0)
         throw invalid_argument("Cat name length must be > 0.");
