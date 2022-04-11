@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+
 #include <stdbool.h>
 #include "Cat.h"
 
@@ -19,21 +20,4 @@ extern NumCats currentCat;
 extern Cat* catDatabaseHeadPointer;
 
 bool isDatabaseValid();
-
-/*struct Cat {
-    char names[MAX_NAME_LENGTH];
-    enum Gender genders;
-    enum Breed breeds;
-    bool isFixedArr;
-    Weight weights;
-    enum Color collarColor1;
-    enum Color collarColor2;
-    unsigned long long license;
-};*/
-
-//extern struct Cat cats[MAX_CATS];
-
-//extern int validateIndex(int i);
-
-//bool isCollarValid(const enum Color collar1, const enum Color collar2);
 

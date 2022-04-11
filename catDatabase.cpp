@@ -9,11 +9,8 @@
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <cstdio>
-#include <cstring>
 #include <cassert>
 #include "catDatabase.h"
-#include "config.h"
 #include "Cat.h"
 
 NumCats currentCat = 0;
@@ -27,18 +24,3 @@ bool isDatabaseValid() {
     }
     return true;
 }
-
-/*
-struct Cat cats[MAX_CATS];
-
-int validateIndex(int i) {
-    if (i < 0 || i > MAX_CATS - 1) {
-        fprintf(stderr, "%s: Index out of bounds.\n", PROGRAM_NAME);
-        return 1;
-    }
-    return 0;
-}
-
-bool isCollarValid(const enum Color collar1, const enum Color collar2) {
-    return collar1 != collar2;
-}*/
