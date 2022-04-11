@@ -61,6 +61,8 @@ Cat::Gender Cat::getGender() {
 }
 
 void Cat::setGender(Gender newGender) {
+    if (gender != UNKNOWN_GENDER)
+        throw logic_error("Previous gender must be UNKNOWN_GENDER");
     assert(isGenderValid(newGender));
     Cat::gender = newGender;
 }
@@ -70,6 +72,8 @@ Cat::Breed Cat::getBreed() {
 }
 
 void Cat::setBreed(Breed newBreed) {
+    if (breed != UNKNOWN_BREED)
+        throw logic_error("Previous breed must be UNKNOWN_BREED");
     assert(isBreedValid(newBreed));
     Cat::breed = newBreed;
 }
@@ -105,15 +109,15 @@ bool Cat::isNameValid(const char *newName) {
 }
 
 bool Cat::isGenderValid(const Gender newGender) {
-    if (gender != UNKNOWN_GENDER && newGender == UNKNOWN_GENDER)
-        throw logic_error("Previous gender must be UNKNOWN_GENDER");
+    if (newGender == UNKNOWN_GENDER)
+        throw logic_error("New gender can not be unknown");
 
     return true;
 }
 
 bool Cat::isBreedValid(const Breed newBreed) {
-    if (breed != UNKNOWN_BREED && newBreed == UNKNOWN_BREED)
-        throw logic_error("Previous breed must be UNKNOWN_BREED");
+    if (newBreed == UNKNOWN_BREED)
+        throw logic_error("New breed can not be unknown");
 
     return true;
 }
