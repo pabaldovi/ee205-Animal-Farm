@@ -11,4 +11,4 @@
 
 #pragma once
 
-#define PROGRAM_NAME "Animal Farm 1"
+#define PROGRAM_NAME "Animal Farm 2"
