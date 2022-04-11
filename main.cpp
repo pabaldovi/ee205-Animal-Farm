@@ -18,7 +18,7 @@
 #include "config.h"
 #include "Cat.h"
 #include "catDatabase.h"
-#include "addCats.h"
+#include "linkedList.h"
 #include "reportCats.h"
 #include "deleteCats.h"
 
