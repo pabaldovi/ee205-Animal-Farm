@@ -56,7 +56,7 @@ void Cat::setName(const char *newName) {
     strcpy(name , newName);
 }
 
-Gender Cat::getGender() {
+Cat::Gender Cat::getGender() {
     return gender;
 }
 
@@ -65,7 +65,7 @@ void Cat::setGender(Gender newGender) {
     Cat::gender = newGender;
 }
 
-Breed Cat::getBreed() {
+Cat::Breed Cat::getBreed() {
     return breed;
 }
 
