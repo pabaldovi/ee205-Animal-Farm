@@ -16,9 +16,19 @@
 #include "config.h"
 #include "Cat.h"
 
-/*
 NumCats currentCat = 0;
+Cat* catDatabaseHeadPointer = nullptr;
 
+bool isDatabaseValid() {
+    Cat* currentPointer = catDatabaseHeadPointer;
+    while (currentPointer != nullptr) {
+        assert(currentPointer -> Cat::validate());
+        currentPointer = currentPointer -> next;
+    }
+    return true;
+}
+
+/*
 struct Cat cats[MAX_CATS];
 
 int validateIndex(int i) {
@@ -32,14 +42,3 @@ int validateIndex(int i) {
 bool isCollarValid(const enum Color collar1, const enum Color collar2) {
     return collar1 != collar2;
 }*/
-
-Cat* catDatabaseHeadPointer = nullptr;
-
-bool isDatabaseValid() {
-    Cat* currentPointer = nullptr;
-    while (currentPointer != nullptr) {
-        assert(currentPointer -> Cat::validate());
-        currentPointer = currentPointer -> next;
-    }
-    return true;
-}
