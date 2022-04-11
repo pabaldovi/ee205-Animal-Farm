@@ -95,7 +95,7 @@ bool Cat::isNameValid(const char *newName) {
     if (strlen(newName) == 0)
         throw invalid_argument("Cat name length must be > 0.");
 
-    if (strlen(newName) > MAX_NAME_LENGTH)
+    if (strlen(newName) >= MAX_NAME_LENGTH)
         throw invalid_argument("Cat name length must be <= " + to_string(MAX_NAME_LENGTH));
 
     return true;
