@@ -16,3 +16,5 @@
 bool addCat(Cat* newCat);
 bool deleteCat(Cat* targetPointer);
 void deleteAllCats();
+void printAllCats();
+Cat* findCatByName(const char *name);

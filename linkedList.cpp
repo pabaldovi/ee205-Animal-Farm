@@ -61,3 +61,23 @@ void deleteAllCats() {
     }
     currentCat = 0;
 }
+
+void printAllCats() {
+    assert(isDatabaseValid());
+    Cat* temp = catDatabaseHeadPointer;
+    while (temp != nullptr) {
+        temp -> Cat::print();
+        temp = temp -> next;
+    }
+}
+
+Cat* findCatByName(const char *name) {
+    Cat* temp = catDatabaseHeadPointer;
+    while (temp != nullptr) {
+        if (strcmp(name, temp->getName()) == 0) {
+            return temp;
+        }
+        temp = temp -> next;
+    }
+    return nullptr;
+}
