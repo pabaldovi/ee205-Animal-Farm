@@ -11,5 +11,7 @@
 
 #pragma once
 
+#include "Cat.h"
+
 void deleteAllCats();
-void deleteCat(int index);
+void deleteCat(Cat* targetPointer);

@@ -8,10 +8,52 @@
 /// @author Paulo Baldovi <pbaldovi@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+
+#include <cassert>
+#include "deleteCats.h"
+#include "catDatabase.h"
+
+void deleteCat(Cat* targetPointer) {
+    assert(isDatabaseValid());
+    Cat* temp = catDatabaseHeadPointer;
+    Cat* prev = nullptr;
+
+    //check if head node holds targetPointer
+    if (temp != nullptr && temp == targetPointer) {
+        catDatabaseHeadPointer = temp -> next;
+        delete temp;
+        currentCat--;
+        assert(isDatabaseValid());
+        return;
+    }
+
+    while (temp != nullptr && temp != targetPointer) {
+        prev = temp;
+        temp = temp -> next;
+    }
+
+    //after iterating through list, targetPointer was not found
+    if (temp == nullptr)
+        return;
+
+    //unlink node from list
+    prev -> next = temp -> next;
+    delete temp;
+    currentCat--;
+    assert(isDatabaseValid());
+}
+
+void deleteAllCats() {
+    assert(isDatabaseValid());
+    while (catDatabaseHeadPointer != nullptr) {
+        deleteCat(catDatabaseHeadPointer);
+    }
+    currentCat = 0;
+}
 /*
 #include <string.h>
 #include "catDatabase.h"
-#include "deleteCats.h"
+
 
 void deleteAllCats() {
     memset(cats, 0, sizeof(cats));
