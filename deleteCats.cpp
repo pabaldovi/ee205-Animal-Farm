@@ -13,7 +13,7 @@
 #include "deleteCats.h"
 #include "catDatabase.h"
 
-void deleteCat(Cat* targetPointer) {
+bool deleteCat(Cat* targetPointer) {
     assert(isDatabaseValid());
     Cat* temp = catDatabaseHeadPointer;
     Cat* prev = nullptr;
@@ -24,7 +24,7 @@ void deleteCat(Cat* targetPointer) {
         delete temp;
         currentCat--;
         assert(isDatabaseValid());
-        return;
+        return true;
     }
 
     while (temp != nullptr && temp != targetPointer) {
@@ -34,13 +34,14 @@ void deleteCat(Cat* targetPointer) {
 
     //after iterating through list, targetPointer was not found
     if (temp == nullptr)
-        return;
+        return false;
 
     //unlink node from list
     prev -> next = temp -> next;
     delete temp;
     currentCat--;
     assert(isDatabaseValid());
+    return true;
 }
 
 void deleteAllCats() {

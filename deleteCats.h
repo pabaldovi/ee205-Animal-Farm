@@ -13,5 +13,5 @@
 
 #include "Cat.h"
 
+bool deleteCat(Cat* targetPointer);
 void deleteAllCats();
-void deleteCat(Cat* targetPointer);
