@@ -40,8 +40,8 @@ int main() {
     {
       // Verify that a cat's default values are set
       Cat testCat = Cat();
-      assert(testCat.getName() != nullptr );
-      assert(strcmp(testCat.getName(), "") == 0);
+      assert(testCat.getName().compare(nullptr) != 0);
+      assert(testCat.getName().length() == 0);
       assert(testCat.getGender() == Cat::UNKNOWN_GENDER);
       assert(testCat.getBreed() == Cat::UNKNOWN_BREED);
       assert(testCat.isCatFixed() == false);

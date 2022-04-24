@@ -9,7 +9,7 @@
 /// @date   10_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <cstring>
+#include <string>
 #include <cassert>
 #include "linkedList.h"
 #include "catDatabase.h"
@@ -72,10 +72,10 @@ void printAllCats() {
     }
 }
 
-Cat* findCatByName(const char *name) {
+Cat* findCatByName(const string name) {
     Cat* temp = catDatabaseHeadPointer;
     while (temp != nullptr) {
-        if (strcmp(name, temp->getName()) == 0) {
+        if (name.compare(temp->getName()) == 0) {
             return temp;
         }
         temp = temp -> next;

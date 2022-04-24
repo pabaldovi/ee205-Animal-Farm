@@ -21,7 +21,8 @@ using namespace std;
 #define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
 
 Cat::Cat() {
-    memset(name, 0, MAX_NAME_LENGTH);
+//    memset(name, 0, MAX_NAME_LENGTH);
+    name = "";
     gender = UNKNOWN_GENDER;
     breed = UNKNOWN_BREED;
     isFixed = false;
@@ -29,7 +30,7 @@ Cat::Cat() {
     next = nullptr;
 }
 
-Cat::Cat(const char *newName, const Gender newGender, const Breed newBreed, const Weight newWeight) {
+Cat::Cat(const string newName, const Gender newGender, const Breed newBreed, const Weight newWeight) {
     setName(newName);
     setGender(newGender);
     setBreed(newBreed);
@@ -37,7 +38,8 @@ Cat::Cat(const char *newName, const Gender newGender, const Breed newBreed, cons
 }
 
 Cat::~Cat() {
-    memset(name, 0, MAX_NAME_LENGTH);
+//    memset(name, 0, MAX_NAME_LENGTH);
+    name = "";
     gender = UNKNOWN_GENDER;
     breed = UNKNOWN_BREED;
     isFixed = false;
@@ -45,13 +47,13 @@ Cat::~Cat() {
     next = nullptr;
 }
 
-char *Cat::getName(){
+string Cat::getName(){
     return name;
 }
 
-void Cat::setName(const char *newName) {
+void Cat::setName(const string newName) {
     assert(isNameValid(newName));
-    strcpy(name , newName);
+    name = newName;
 }
 
 Cat::Gender Cat::getGender() {
@@ -93,14 +95,14 @@ void Cat::setWeight(Weight newWeight) {
     Cat::weight = newWeight;
 }
 
-bool Cat::isNameValid(const char *newName) {
-    if (newName == nullptr)
+bool Cat::isNameValid(const string newName) {
+    if (newName.compare(nullptr) == 0)
         throw invalid_argument("Cat name must not be null");
 
-    if (strlen(newName) == 0)
+    if (newName.length() == 0)
         throw invalid_argument("Cat name length must be > 0.");
 
-    if (strlen(newName) >= MAX_NAME_LENGTH)
+    if (newName.length() >= MAX_NAME_LENGTH)
         throw invalid_argument("Cat name length must be <= " + to_string(MAX_NAME_LENGTH));
 
     return true;
@@ -140,7 +142,7 @@ bool Cat::validate() {
     return true;
 }
 
-const char* genderName(const enum Cat::Gender gender) {
+const string genderName(const enum Cat::Gender gender) {
     switch (gender) {
         case 0   :  return "Unknown gender";
         case 1   :  return "Male";
@@ -149,7 +151,7 @@ const char* genderName(const enum Cat::Gender gender) {
     }
 }
 
-const char* breedName(const enum Cat::Breed breed) {
+const string breedName(const enum Cat::Breed breed) {
     switch (breed) {
         case 0   :  return "Unknown breed";
         case 1   :  return "Maine coon";
