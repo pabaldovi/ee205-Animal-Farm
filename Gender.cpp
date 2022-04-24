@@ -12,7 +12,7 @@
 #include "Gender.h"
 #include "config.h"
 
-inline std::ostream& operator<<( std::ostream& lhs_stream, const Gender& rhs_Gender ){
+inline std::ostream& operator<<( std::ostream& lhs_stream, const Gender& rhs_Gender ) {
     switch( rhs_Gender ) {
         case Gender::UNKNOWN_GENDER:
             lhs_stream << "Unknown gender";
