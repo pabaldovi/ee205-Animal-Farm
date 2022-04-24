@@ -13,4 +13,6 @@ add_executable(ee205_lab_08d_animal_farm_1_to_clion
         linkedList.cpp
         linkedList.h
         Weight.cpp
-        Weight.h)
+        Weight.h
+        Gender.cpp
+        Gender.h)
