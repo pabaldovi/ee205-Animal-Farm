@@ -35,5 +35,5 @@ void Mammal::setColor(const Color newColor) noexcept {
 void Mammal::dump() const noexcept {
     assert(Animal::validate());
     Animal::dump();
-    FORMAT_LINE_FOR_DUMP("Mammal", "this") << this << std::endl;
+    FORMAT_LINE_FOR_DUMP("Mammal", "color") << getColor() << std::endl;
 }

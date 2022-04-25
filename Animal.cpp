@@ -70,7 +70,7 @@ void Animal::setWeight(const Weight::t_weight newWeight) {
 
 void Animal::dump() const noexcept {
     assert(Animal::validate());
-
+    Node::dump();
     FORMAT_LINE_FOR_DUMP("Animal", "this") << this << std::endl;
     FORMAT_LINE_FOR_DUMP("Animal", "kingdom") << getKingdom() << std::endl;
     FORMAT_LINE_FOR_DUMP("Animal", "classification") << getClassification() << std::endl;
