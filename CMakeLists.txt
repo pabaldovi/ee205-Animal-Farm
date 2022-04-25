@@ -4,21 +4,14 @@ project(ee205_lab_13a_animal_farm_3)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(ee205_lab_13a_animal_farm_3
-        catDatabase.cpp
-        catDatabase.h
+        catDatabase.cpp catDatabase.h
         config.h
         main.cpp
-        Cat.cpp
-        Cat.h
-        linkedList.cpp
-        linkedList.h
-        Weight.cpp
-        Weight.h
-        Gender.cpp
-        Gender.h
-        Breed.cpp
-        Breed.h
-        Color.cpp
-        Color.h
-        Node.cpp
-        Node.h)
+        Cat.cpp Cat.h
+        linkedList.cpp linkedList.h
+        Weight.cpp Weight.h
+        Gender.cpp Gender.h
+        Breed.cpp Breed.h
+        Color.cpp Color.h
+        Node.cpp Node.h
+        List.cpp List.h)
