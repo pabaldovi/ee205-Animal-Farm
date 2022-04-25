@@ -29,7 +29,7 @@ class List {
         void deleteAllNodes() noexcept;
         virtual Node* pop_front() noexcept = 0;
         virtual void dump() const noexcept = 0;
-        virtual  bool validate() const noexcept = 0;
+        virtual bool validate() const noexcept = 0;
 
         /*static public member functions*/
         static Node* get_next(const Node *currentNode);
