@@ -20,17 +20,13 @@ class Mammal : public Animal {
         Color color;
 
     public:
+        /*static public attribute*/
+        static const std::string MAMMAL_NAME;
+
         /*public member functions*/
-        Mammal(const Weight::t_weight newMaxWeight, const std::string &newSpecies)
-            : Animal(newMaxWeight, MAMMAL_NAME, newSpecies) {};
-        Mammal(const Color newColor, const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight, const std::string &newSpecies)
-            : Animal(newGender, newWeight, newMaxWeight, MAMMAL_NAME, newSpecies) {
-                color = newColor;
-        };
+        Mammal(const Weight::t_weight newMaxWeight, const std::string &newSpecies);
+        Mammal(const Color newColor, const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight, const std::string &newSpecies);
         Color getColor() const noexcept;
         void setColor(const Color newColor) noexcept;
         void dump() const noexcept override;
-
-        /*static public attribute*/
-        static const std::string MAMMAL_NAME;
 };

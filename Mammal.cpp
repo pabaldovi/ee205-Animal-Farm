@@ -13,7 +13,16 @@
 #include "Mammal.h"
 #include "config.h"
 
-const std::string MAMMAL_NAME = "Mammilian";
+const std::string Mammal::MAMMAL_NAME = "Mammilian";
+
+Mammal::Mammal(const Weight::t_weight newMaxWeight, const std::string &newSpecies)
+        : Animal(newMaxWeight, MAMMAL_NAME, newSpecies) {
+}
+
+Mammal::Mammal(const Color newColor, const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight, const std::string &newSpecies)
+        : Animal(newGender, newWeight, newMaxWeight, MAMMAL_NAME, newSpecies) {
+    color = newColor;
+}
 
 Color Mammal::getColor() const noexcept {
     return color;
