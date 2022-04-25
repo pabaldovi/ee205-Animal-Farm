@@ -12,6 +12,7 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 
 #define PROGRAM_TITLE "Animal Farm 3"
 #define PROGRAM_NAME "animalfarm3"
@@ -19,7 +20,6 @@
 #define PRINT_HEADING_FOR_DUMP                                              \
     /* Print =========================================================== */ \
     std::cout << std::setw(80) << std::setfill( '=' ) << "" << std::endl
-
 
 #define FORMAT_LINE_FOR_DUMP(className, member)                             \
     std::cout << std::setfill( ' ' )  /* Space pad    */                    \

@@ -19,4 +19,6 @@ add_executable(ee205_lab_13a_animal_farm_3
         Breed.cpp
         Breed.h
         Color.cpp
-        Color.h)
+        Color.h
+        Node.cpp
+        Node.h)
