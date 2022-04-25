@@ -12,6 +12,7 @@
 #pragma once
 
 #include <ostream>
+#include "config.h"
 
 /// A gender... for educational use only.  This is not intended to be
 /// inclusive of all possible genders
@@ -30,4 +31,20 @@ enum class Gender {
 ///                   `rhs` stands for Right Hand Side and means the right
 ///                   side of the `<<` operator.
 /// @return `Unknown gender`, `Female` or `Male`.
-inline std::ostream& operator<<( std::ostream& lhs_stream, const Gender& rhs_Gender );
+inline std::ostream& operator<<( std::ostream& lhs_stream, const Gender& rhs_Gender ) {
+    switch( rhs_Gender ) {
+        case Gender::UNKNOWN_GENDER:
+            lhs_stream << "Unknown gender";
+            break;
+        case Gender::MALE:
+            lhs_stream << "Male";
+            break;
+        case Gender::FEMALE:
+            lhs_stream << "Female";
+            break;
+        default:
+            /// @throw out_of_range If the enum is not mapped to a string.
+            throw std::out_of_range( PROGRAM_NAME ": Gender not mapped to a string" );
+    }
+    return lhs_stream;
+}
