@@ -14,6 +14,7 @@
 #include <ostream>
 
 enum class Color {
+    UNKNOWN_COLOR,
     BLACK,
     WHITE,
     RED,

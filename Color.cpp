@@ -14,6 +14,9 @@
 
 inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Color ) {
     switch( rhs_Color ) {
+        case Color::UNKNOWN_COLOR:
+            lhs_stream << "Unknown color";
+            break;
         case Color::BLACK:
             lhs_stream << "Black";
             break;
