@@ -12,82 +12,38 @@
 #pragma once
 
 #include <string>
+#include "Mammal.h"
 
-using namespace std;
-
-#define MAX_NAME_LENGTH (50)
-#define UNKNOWN_WEIGHT  (-1)
-
-typedef float Weight;
-typedef int NumCats;
-
-class Cat {
-    public:
-        enum Gender {
-            UNKNOWN_GENDER,
-            MALE,
-            FEMALE
-        };
-        enum Breed {
-            UNKNOWN_BREED,
-            MAINE_COON,
-            MANX,
-            SHORTHAIR,
-            PERSIAN,
-            SPHYNX
-        };
-        enum Color {
-            BLACK,
-            WHITE,
-            RED,
-            BLUE,
-            GREEN,
-            PINK
-        };
-
-        Cat *next;
-
-        // Cat constructor with no parameters
-        Cat();
-        // Cat constructor with all fields for valid cat
-        Cat(const string    newName,
-            const Gender    newGender,
-            const Breed     newBreed,
-            const Weight    newWeight);
-
-        //Cat destructor
-        virtual ~Cat();
-
-        string getName();
-        void setName(const string newName);
-
-        Gender getGender();
-        void setGender(Gender newGender);
-
-        Breed getBreed();
-        void setBreed(Breed newBreed);
-
-        bool isCatFixed();
-        void fixCat();
-
-        Weight getWeight();
-        void setWeight(Weight newWeight);
-
-        bool isNameValid(const string newName);
-        bool isGenderValid(const Gender newGender);
-        bool isBreedValid(const Breed newBreed);
-        bool isWeightValid(const Weight newWeight);
-
-        bool validate();
-        bool print();
+class Cat : public Mammal {
     protected:
-//        char name[MAX_NAME_LENGTH];
-        string name;
-        enum Gender gender;
-        enum Breed breed;
-        bool isFixed;
-        Weight weight;
-};
+        /*protected attributes*/
+        std::string name;
+        bool isCatFixed;
 
-extern const string genderName(const enum Cat::Gender gender);
-extern const string breedName(const enum Cat::Breed breed);
+    public:
+        /*public member functions*/
+        Cat(const std::string &newName)
+            : Mammal(MAX_WEIGHT, SPECIES_NAME) {
+                name = newName;
+                isCatFixed = false;
+        };
+        Cat(const std::string &newName, const Color newColor, const bool newIsFixed, const Gender newGender, const Weight::t_weight newWeight)
+            : Mammal(newColor, newGender, newWeight, MAX_WEIGHT, SPECIES_NAME) {
+                name = newName;
+                isCatFixed = false;
+        };
+        std::string getName() const noexcept;
+        void setName(const std::string &newName);
+        bool isFixed() const noexcept;
+        void fixCat() noexcept;
+        std::string speak () const noexcept override;
+        void dump() const noexcept override;
+        bool validate() const noexcept override;
+
+        /*static public member function*/
+        static bool validateName(const std::string &newName);
+
+        /*static public attributes*/
+        static const std::string SPECIES_NAME;
+        static const Weight::t_weight MAX_WEIGHT;
+};
