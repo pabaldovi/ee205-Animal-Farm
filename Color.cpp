@@ -35,6 +35,15 @@ inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Colo
         case Color::PINK:
             lhs_stream << "Pink";
             break;
+        case Color::CREAM:
+            lhs_stream << "Cream";
+            break;
+        case Color::BROWN:
+            lhs_stream << "Brown";
+            break;
+        case Color::CALICO:
+            lhs_stream << "Calico";
+            break;
         default:
             /// @throw out_of_range If the enum is not mapped to a string.
             throw std::out_of_range( PROGRAM_NAME ": Color not mapped to a string" );

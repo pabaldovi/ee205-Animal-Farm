@@ -20,7 +20,11 @@ enum class Color {
     RED,
     BLUE,
     GREEN,
-    PINK
+    PINK,
+    CREAM,
+    BROWN,
+    CALICO,
+    GINGER
 };
 
 inline std::ostream& operator<<( std::ostream& lhs_stream, const Color& rhs_Color );
