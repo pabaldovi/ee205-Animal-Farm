@@ -30,7 +30,7 @@ class Cat : public Mammal {
         Cat(const std::string &newName, const Color newColor, const bool newIsFixed, const Gender newGender, const Weight::t_weight newWeight)
             : Mammal(newColor, newGender, newWeight, MAX_WEIGHT, SPECIES_NAME) {
                 name = newName;
-                isCatFixed = false;
+                isCatFixed = newIsFixed;
         };
         std::string getName() const noexcept;
         void setName(const std::string &newName);
