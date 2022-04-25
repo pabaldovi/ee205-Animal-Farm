@@ -17,18 +17,19 @@ bool Node::compareByAddress(const Node *node1, const Node *node2) {
 }
 
 void Node::dump() const {
+    PRINT_HEADING_FOR_DUMP;
     FORMAT_LINE_FOR_DUMP("Node", "this") << this << std::endl;
     FORMAT_LINE_FOR_DUMP("Node", "next") << next << std::endl;
 }
 
 bool Node::validate() const noexcept {
-    //next should not point to itself
-    if (next == next -> next)
-        return false;
-
     //nullptr is a valid value for next
     if (next == nullptr)
         return true;
+
+    //next should not point to itself
+    if (next == next->next)
+        return false;
 
     //true for all other cases
     return true;
