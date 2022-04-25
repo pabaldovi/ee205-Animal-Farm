@@ -43,6 +43,7 @@ public:
     bool operator== (const Weight &rhs_Weight) const;
     bool operator< (const Weight &rhs_Weight) const;
     Weight &operator+= (t_weight rhs_addToWeight);
+    void setMaxWeight(t_weight newMaxWeight);
 
     /*static public member functions*/
     static t_weight fromKilogramToPound(t_weight kilogram) noexcept;
@@ -60,8 +61,8 @@ public:
     static const std::string SLUG_LABEL;
 
 private:
-    /*private member functions*/
-    void setMaxWeight(t_weight newMaxWeight);
+//    /*private member functions*/
+//    void setMaxWeight(t_weight newMaxWeight);
 
     /*private attributes*/
     bool bIsKnown;

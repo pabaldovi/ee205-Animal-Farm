@@ -15,4 +15,5 @@ add_executable(ee205_lab_13a_animal_farm_3
         Color.cpp Color.h
         Node.cpp Node.h
         List.cpp List.h
-        SinglyLinkedList.cpp SinglyLinkedList.h)
+        SinglyLinkedList.cpp SinglyLinkedList.h
+        Animal.cpp Animal.h)
