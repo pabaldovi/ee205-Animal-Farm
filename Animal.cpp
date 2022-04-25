@@ -11,6 +11,7 @@
 
 #include <stdexcept>
 #include <cassert>
+#include <sstream>
 #include "Animal.h"
 #include "config.h"
 
@@ -70,13 +71,16 @@ void Animal::setWeight(const Weight::t_weight newWeight) {
 
 void Animal::dump() const noexcept {
     assert(Animal::validate());
+    std::stringstream str_weight_buffer;
+    str_weight_buffer << getWeight() << " out of " << weight.getMaxWeight() << " " << weight.getWeightUnit() ;
+
     Node::dump();
     FORMAT_LINE_FOR_DUMP("Animal", "this") << this << std::endl;
     FORMAT_LINE_FOR_DUMP("Animal", "kingdom") << getKingdom() << std::endl;
     FORMAT_LINE_FOR_DUMP("Animal", "classification") << getClassification() << std::endl;
     FORMAT_LINE_FOR_DUMP("Animal", "species") << getSpecies() << std::endl;
     FORMAT_LINE_FOR_DUMP("Animal", "gender") << getGender() << std::endl;
-    FORMAT_LINE_FOR_DUMP("Animal", "weight") << getWeight() << std::endl;
+    FORMAT_LINE_FOR_DUMP("Animal", "weight") << str_weight_buffer.str() << std::endl;
 }
 
 bool Animal::validate() const noexcept {

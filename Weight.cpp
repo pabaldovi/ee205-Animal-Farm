@@ -228,8 +228,7 @@ void Weight::setMaxWeight(Weight::t_weight newMaxWeight) {
     bHasMax = true;
 }
 
-std::ostream& operator<<( ostream& lhs_stream
-        ,const Weight::UnitOfWeight rhs_UnitOfWeight ) {
+std::ostream& operator<<( ostream& lhs_stream, const Weight::UnitOfWeight rhs_UnitOfWeight ) {
     switch( rhs_UnitOfWeight ) {
         case Weight::POUND: return lhs_stream << Weight::POUND_LABEL ;
         case Weight::KILO:  return lhs_stream << Weight::KILO_LABEL ;
@@ -238,3 +237,7 @@ std::ostream& operator<<( ostream& lhs_stream
             throw out_of_range( "The unit can’t be mapped to a string" );
     }
 }
+
+//std::ostream& operator<<( std::ostream& lhs_stream, const Weight& rhs_Weight ) {
+//    return lhs_stream << " out of " << rhs_Weight.getMaxWeight() << " " << rhs_Weight.getWeightUnit();
+//}
