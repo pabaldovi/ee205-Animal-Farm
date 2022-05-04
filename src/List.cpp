@@ -11,7 +11,9 @@
 
 #include <stdexcept>
 #include <cassert>
+#include <iostream>
 #include "List.h"
+#include "config.h"
 
 bool List::empty() const noexcept {
     return head == nullptr;
