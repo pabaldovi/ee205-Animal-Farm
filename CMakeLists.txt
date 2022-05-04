@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.22)
-project(ee205_lab_13a_animal_farm_3)
+
+project(ee205_animal_farm
+        VERSION 3.0
+        DESCRIPTION "All animals are equal, but some animals are more equal than others"
+        LANGUAGES CXX )
 
 set(CMAKE_CXX_STANDARD 14 -Wall)
 
